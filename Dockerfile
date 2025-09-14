@@ -1,4 +1,4 @@
-FROM php:8.0-apache
+FROM php:7.4-apache
 
 #Install PDO MySQL
 RUN docker-php-ext-install pdo pdo_mysql
@@ -10,7 +10,7 @@ RUN a2enmod rewrite
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 #Copy and files
-COPY ./var/www/html
+COPY ./var/www/html 
 
 #Fix permissions
 RUN chown -R www-data:www-data /var/www/html \
