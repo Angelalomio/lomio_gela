@@ -1,4 +1,4 @@
-FROM php:4.7-apache
+FROM php:8.0-apache
 
 #Install PDO MySQL
 RUN docker-php-ext-install pdo pdo_mysql
